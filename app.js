@@ -1,19 +1,19 @@
 class Form extends React.Component {
+  state = {
+    city: "Londyn",
+  };
   render() {
     return (
-      <form>
+      <div>
         <label>
-          Podaj imię
-          <input type="text" name="name" />
+          Podaj miasto
+          <input
+            value={this.state.city}
+            onChange={this.handleCityChange}
+            type="text"
+          />
         </label>
-        <br />
-        <label>
-          Podaj email:
-          <input type="email" name="email" />
-        </label>
-        <br />
-        <button>Zapisz się</button>
-      </form>
+      </div>
     );
   }
 }
