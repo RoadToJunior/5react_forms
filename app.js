@@ -10,6 +10,12 @@ class Form extends React.Component {
     });
   };
 
+  handleTextChange = (e) => {
+    this.setState({
+      text: e.target.value,
+    });
+  };
+
   render() {
     return (
       <div>
@@ -21,8 +27,12 @@ class Form extends React.Component {
             type="text"
           />
         </label>
+        <br />
         <label>
-          <input value={}/>
+          <textarea
+            value={this.state.text}
+            onChange={this.handleTextChange}
+          ></textarea>
         </label>
       </div>
     );
