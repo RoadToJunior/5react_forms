@@ -1,6 +1,7 @@
 class Form extends React.Component {
   state = {
     city: "Londyn",
+    text: "",
   };
 
   handleCityChange = (e) => {
@@ -19,6 +20,9 @@ class Form extends React.Component {
             onChange={this.handleCityChange}
             type="text"
           />
+        </label>
+        <label>
+          <input value={}/>
         </label>
       </div>
     );
