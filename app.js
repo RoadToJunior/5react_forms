@@ -3,6 +3,7 @@ class Form extends React.Component {
     city: "Londyn",
     text: "",
     isLoved: true,
+    number: "0",
   };
 
   handleCityChange = (e) => {
@@ -22,6 +23,12 @@ class Form extends React.Component {
       isLoved: e.target.checked,
     });
   };
+
+  handleVisitsNumberChange(e) {
+    this.setState({
+      number: e.target.value,
+    });
+  }
 
   render() {
     return (
@@ -54,7 +61,10 @@ class Form extends React.Component {
         <br />
         <label>
           Ile razy byłeś w tym mieście?
-          <select>
+          <select
+            value={this.state.number}
+            onChange={this.handleVisitsNumberChange.bind(this)}
+          >
             <option>0</option>
             <option>1</option>
             <option>2</option>
