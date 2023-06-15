@@ -6,29 +6,11 @@ class Form extends React.Component {
     number: "0",
   };
 
-  handleCityChange = (e) => {
+  handleChange = (e) => {
     this.setState({
-      city: e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
-
-  handleTextChange = (e) => {
-    this.setState({
-      text: e.target.value,
-    });
-  };
-
-  handleIsLovedChange = (e) => {
-    this.setState({
-      isLoved: e.target.checked,
-    });
-  };
-
-  handleVisitsNumberChange(e) {
-    this.setState({
-      number: e.target.value,
-    });
-  }
 
   render() {
     return (
@@ -37,8 +19,9 @@ class Form extends React.Component {
           Podaj miasto
           <input
             value={this.state.city}
-            onChange={this.handleCityChange}
+            onChange={this.handleChange}
             type="text"
+            name="city"
           />
         </label>
         <br />
@@ -46,7 +29,8 @@ class Form extends React.Component {
           Napisz coś o tym mieście
           <textarea
             value={this.state.text}
-            onChange={this.handleTextChange}
+            onChange={this.handleChange}
+            name="text"
           ></textarea>
         </label>
         <br />
@@ -55,7 +39,8 @@ class Form extends React.Component {
           <input
             type="checkbox"
             checked={this.state.isLoved}
-            onChange={this.handleIsLovedChange}
+            onChange={this.handleChange}
+            name="isLoved"
           />
         </label>
         <br />
@@ -63,7 +48,8 @@ class Form extends React.Component {
           Ile razy byłeś w tym mieście?
           <select
             value={this.state.number}
-            onChange={this.handleVisitsNumberChange.bind(this)}
+            onChange={this.handleChange.bind(this)}
+            name="number"
           >
             <option>0</option>
             <option>1</option>
