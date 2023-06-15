@@ -51,6 +51,16 @@ class Form extends React.Component {
             onChange={this.handleIsLovedChange}
           />
         </label>
+        <br />
+        <label>
+          Ile razy byłeś w tym mieście?
+          <select>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+          </select>
+        </label>
       </div>
     );
   }
